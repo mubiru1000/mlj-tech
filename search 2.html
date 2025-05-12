@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+</head>
+<body>
+
+    <!-- Search bar -->
+    <input type="text" id="searchBar" placeholder="Search...">
+    
+    <!-- Button to trigger the search -->
+    <button id="searchButton">Search</button>
+    
+    <!-- Container to display search results -->
+    <div id="results"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<script>
+    document.getElementById('searchButton').addEventListener('click', function() {
+    // Get the value from the search bar
+    const searchTerm = document.getElementById('searchBar').value;
+
+    // For demonstration, simply display the search term
+    // In a real scenario, this could be an API call or a search function
+    const resultsContainer = document.getElementById('results');
+    
+    // If no search term is entered, display a message
+    if (!searchTerm) {
+        resultsContainer.innerHTML = 'Please enter a search term.';
+    } else {
+        // Display the search term in the results
+        resultsContainer.innerHTML = `You searched for: ${searchTerm}`;
+        
+        // Here, you can add the code to fetch actual search results
+        // from a server or search your data
+    }
+});
+
+</script>

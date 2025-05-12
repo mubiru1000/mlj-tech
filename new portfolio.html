@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Dark Mode Styles */
+    .dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .dark-mode header, .dark-mode footer {
+      background-color: #1e1e1e;
+    }
+
+    .dark-mode nav a {
+      color: #f0f0f0;
+    }
+
+    .dark-mode nav a:hover {
+      color: #90caf9;
+    }
+
+    .dark-mode .button {
+      background-color: #90caf9;
+    }
+
+    .dark-mode .button:hover {
+      background-color: #64b5f6;
+    }
+
+    /* Header and Navigation */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #007BFF;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 24px;
+      margin-top: 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Parallax Background */
+    .parallax-section {
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e'); /* Replace with your own */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 8rem 2rem;
+      color: white;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    /* Smooth Section Transitions */
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlideIn 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: #fff;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</head>
+<body>
+
+<!-- Particles Background -->
+<div id="particles-js" style="position:fixed;width:100%;height:100%;z-index:-1;"></div>
+
+<header>
+  <h1>My Portfolio</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button onclick="toggleDarkMode()" class="button">Toggle Dark Mode</button>
+</header>
+
+<main>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Welcome to My Portfolio!</h2>
+    <p>Explore my work, projects, and more!</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a web developer with a passion for creating modern websites. My expertise lies in frontend technologies like HTML, CSS, JavaScript, and more. I love building interactive, responsive web applications.</p>
+  </section>
+
+  <!-- Work Section (Portfolio) -->
+  <section id="work">
+    <h2>My Work</h2>
+    <p>Here are some of my recent projects:</p>
+    <div>
+      <a href="https://example.com" class="button" target="_blank">Project 1</a>
+      <a href="https://example.com" class="button" target="_blank">Project 2</a>
+    </div>
+  </section>
+
+  <!-- Parallax Section -->
+  <section class="parallax-section">
+    <p>Explore the world of technology with me!</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you want to collaborate, ask questions, or just chat, feel free to reach out!</p>
+    <p><a href="mailto:youremail@example.com" class="button">Send me an Email</a></p>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 My Portfolio. All rights reserved.
+</footer>
+
+<!-- Particles.js Script -->
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 80
+    },
+    "size": {
+      "value": 3
+    },
+    "move": {
+      "speed": 1
+    },
+    "line_linked": {
+      "enable": true
+    }
+  }
+});
+</script>
+
+</body>
+</html>

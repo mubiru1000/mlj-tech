@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Cool Website</title>
+  <div id="particles-js" style="position:fixed;width:100%;height:100%;z-index:-1;"></div>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <button onclick="toggleDarkMode()" class="button" style="margin-left:20px;">Toggle Dark Mode</button>
+
+  <section id="home">
+    <h2 id="animated-text">Welcome to My Cool Website!</h2>
+    <p>Scroll down to discover more amazing content! 🚀</p>
+  </section>
+  
+  <section class="parallax-section">
+    <img src="C:\Users\MUBIRU\Documents\portfolio\images 2\ChatGPT Image Apr 23, 2025, 06_25_18 AM.png" />
+    Explore New Worlds ✨
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80
+        },
+        "size": {
+          "value": 3
+        },
+        "move": {
+          "speed": 1
+        },
+        "line_linked": {
+          "enable": true
+        }
+      }
+    });
+    </script>
+    
+
+  <script>
+  const text = " Welcome to My Cool Website!";
+  let index = 0;
+  function typeEffect() {
+    if (index < text.length) {
+      document.getElementById("animated-text").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeEffect, 100);
+    }
+  }
+  window.onload = typeEffect;
+ </script> 
+  
+  <style>
+    .parallax-section {
+      /* Replace with your own */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 8rem 2rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Section animation */
+    section {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeSlideIn 1s ease forwards;
+        animation-delay: 0.3s;
+    }
+    
+    @keyframes fadeSlideIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+    
+
+<!-- Insert inside <head> -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+        </script>
+        
+        <style>
+        /* Add Dark Mode Styles */
+        .dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+        .dark-mode header, .dark-mode footer {
+            background-color: #1e1e1e;
+        }
+        .dark-mode nav a {
+            color: #f0f0f0;
+        }
+        .dark-mode nav a:hover {
+            color: #90caf9;
+        }
+        .dark-mode .button {
+            background-color: #90caf9;
+        }
+        .dark-mode .button:hover {
+            background-color: #64b5f6;
+        }
+        </style>
+        
+
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #007BFF;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+    }
+
+    main {
+      padding: 4rem 2rem;
+    }
+
+    section {
+      margin-bottom: 6rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #007BFF;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      max-width: 800px;
+      margin-bottom: 1rem;
+    }
+
+    .video-wrapper {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 24px;
+      margin-top: 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      border: none;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background: #fff;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ddd;
+    }
+
+    /* Add a smooth fade effect when loading sections */
+    section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>My Cool Website</h1>
+  <nav>
+    <a href="#home" id="Home">Home</a>
+    <a href="#about">About</a>
+    <a href="#videos">Videos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Welcome to My Site!</h2>
+    <p>Hello and welcome! 🎉 This is my personal website where I share my thoughts, videos, and passions with you.</p>
+    <p>Scroll down to learn more!</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm a web enthusiast who loves building modern, responsive websites, creating YouTube content, and exploring new technologies like AI and coding tutorials.</p>
+    <p>When I'm not coding, you'll find me gaming 🎮, editing videos 🎥, or dreaming about the next big thing 🚀.</p>
+  </section>
+
+  <!-- Videos Section -->
+  <section id="videos">
+    <h2>Featured Videos</h2>
+    <p>Here are some of my favorite YouTube videos. Check them out!</p>
+    
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video 1" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/oHg5SJYRHA0" title="Video 2" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <a class="button" href="https://www.youtube.com/" target="_blank">Visit My YouTube Channel</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Have a project idea, question, or just want to say hi?</p>
+    <p><a href="mailto:youremail@example.com" class="button">Send me an Email</a></p>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2025 My Cool Website. All rights reserved.
+</footer>
+
+</body>
+</html>

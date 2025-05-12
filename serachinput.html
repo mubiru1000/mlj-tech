@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Search Bar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search..." onkeyup="searchSuggestions()" />
+    <div id="suggestions" class="suggestions"></div>
+  </div>
+   <!-- Button to trigger the search -->
+   <button id="searchButton">Search</button>
+    
+   <!-- Container to display search results -->
+   <div id="results"></div>
+
+  <script src="script.js"></script>
+</body>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.search-container {
+  position: relative;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+</style>
+<script>
+    const recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+const searchInput = document.getElementById('search');
+const suggestionsBox = document.getElementById('suggestions');
+
+// Function to update suggestions based on input
+function searchSuggestions() {
+  const query = searchInput.value.toLowerCase();
+  suggestionsBox.innerHTML = '';
+
+  if (query.length === 0) {
+    displayRecentSearches();
+    return;
+  }
+
+  const filteredSuggestions = getSuggestions(query);
+  filteredSuggestions.forEach(suggestion => {
+    const suggestionItem = document.createElement('div');
+    suggestionItem.classList.add('suggestion-item');
+    suggestionItem.innerText = suggestion;
+    suggestionItem.onclick = () => handleSuggestionClick(suggestion);
+    suggestionsBox.appendChild(suggestionItem);
+  });
+}
+
+// Function to handle click on a suggestion
+function handleSuggestionClick(suggestion) {
+  searchInput.value = suggestion;
+  addRecentSearch(suggestion);
+  suggestionsBox.innerHTML = '';
+}
+
+// Function to get filtered suggestions (can be extended or replaced with an API)
+function getSuggestions(query) {
+  const suggestions = ['Apple', 'Banana', 'Cherry', 'Grapes', 'Mango', 'Orange', 'Pineapple', 'Strawberry'];
+  return suggestions.filter(suggestion => suggestion.toLowerCase().includes(query));
+}
+
+// Function to display recent searches
+function displayRecentSearches() {
+  if (recentSearches.length > 0) {
+    recentSearches.forEach(search => {
+      const suggestionItem = document.createElement('div');
+      suggestionItem.classList.add('suggestion-item');
+      suggestionItem.innerText = search;
+      suggestionItem.onclick = () => handleSuggestionClick(search);
+      suggestionsBox.appendChild(suggestionItem);
+    });
+  } else {
+    suggestionsBox.innerHTML = '<div class="suggestion-item">No recent searches</div>';
+  }
+}
+
+// Function to add a search term to the recent searches list
+function addRecentSearch(search) {
+  if (!recentSearches.includes(search)) {
+    recentSearches.push(search);
+    localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+  }
+}
+
+// Initial load - display recent searches
+window.onload = displayRecentSearches;
+
+</script>
+
+</html>

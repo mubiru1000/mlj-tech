@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form class="expandable-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <div class="additional-content">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+<style>
+    /* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.expandable-form {
+    background-color: #ff4b5c; /* Coca-Cola Red */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.expandable-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.expandable-form input:focus {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+.expandable-form input:focus + .additional-content {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+.additional-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.additional-content input {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Additional style for smooth transitions */
+.expandable-form:focus-within {
+    box-shadow: 0 0 20px rgba(255, 75, 92, 0.7);
+}
+
+.expandable-form:focus-within .expandable-form input {
+    background-color: #fff;
+    color: #333;
+}
+
+
+</style>
+<script>
+    // Optional: JavaScript for extra smooth animation if desired.
+document.querySelector("input").addEventListener("focus", function() {
+    const additionalContent = document.querySelector(".additional-content");
+    additionalContent.style.maxHeight = "500px";
+    additionalContent.style.opacity = 1;
+});
+
+document.querySelector("input").addEventListener("blur", function() {
+    const additionalContent = document.querySelector(".additional-content");
+    additionalContent.style.maxHeight = "0";
+    additionalContent.style.opacity = 0;
+});
+
+</script>
+</html>

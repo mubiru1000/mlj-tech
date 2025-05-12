@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual DJ Inspired Site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f0f0f;
+      --text-color: #f0f0f0;
+      --accent-color: #1db954;
+    }
+
+    body.light-theme {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100vh;
+      background-color: #1c1c1c;
+      display: flex;
+      flex-direction: column;
+      padding-top: 2rem;
+      z-index: 2;
+    }
+
+    .navbar .logo {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--accent-color);
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .navbar a:hover, .navbar a:focus {
+      background-color: var(--accent-color);
+    }
+
+    .navbar a:focus::after {
+      content: attr(data-window);
+      position: absolute;
+      top: 0;
+      left: 100%;
+      margin-left: 10px;
+      background-color: #222;
+      padding: 10px;
+      border: 1px solid #444;
+      width: 200px;
+      z-index: 1;
+    }
+
+    .main {
+      margin-left: 220px;
+      padding: 2rem;
+    }
+
+    .toggle-theme {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      background: var(--accent-color);
+      color: black;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .settings-panel {
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background: #333;
+      padding: 1rem;
+      color: white;
+      border: 1px solid #444;
+      display: none;
+      z-index: 3;
+    }
+
+    .image-text-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .image-text-section img {
+      width: 300px;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .search-bar {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">MLJ</div>
+    <a href="#home" data-window="Home Window">Home</a>
+    <a href="#login" data-window="Login Window">Login</a>
+    <a href="#contact" data-window="Contact Window">Contact</a>
+    <a href="#search" data-window="Search Window">Search</a>
+    <a href="#info" data-window="Info Window">Info</a>
+    <a href="#gallery" data-window="Gallery Window">Gallery</a>
+    <a href="#about" data-window="About Us Window">About</a>
+    <a href="#help" data-window="Help Window">Help</a>
+    <a href="#settings" id="settings-btn" data-window="Open Settings">Settings</a>
+  </div>
+
+  <div class="main">
+    <div id="home">
+      <h1>Welcome to Virtual DJ Inspired Page</h1>
+      <div class="search-bar">
+        <input type="text" placeholder="Search like Chrome...">
+      </div>
+      <div class="image-text-section">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+        <p>This image is explained by this paragraph. It talks about the synergy between visuals and text.</p>
+      </div>
+    </div>
+
+    <div id="login">
+      <h2>Login</h2>
+      <form>
+        <input type="text" placeholder="Username" required><br><br>
+        <input type="password" placeholder="Password" required><br><br>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <div id="contact">
+      <h2>Contact</h2>
+      <p>Email us at contact@example.com or call 123-456-7890</p>
+    </div>
+
+    <div id="search">
+      <h2>Search Section</h2>
+      <input type="text" placeholder="Start typing...">
+    </div>
+
+    <div id="info">
+      <h2>Information</h2>
+      <div class="image-text-section">
+        <p>Here's some information paired with an image. This layout enhances user understanding.</p>
+        <img src="https://via.placeholder.com/300" alt="More Info Image">
+      </div>
+    </div>
+
+    <div id="gallery">
+      <h2>Gallery</h2>
+      <img src="https://via.placeholder.com/300" alt="Gallery Image 1">
+      <img src="https://via.placeholder.com/300" alt="Gallery Image 2">
+    </div>
+
+    <div id="about">
+      <h2>About Us</h2>
+      <p>We are a team dedicated to virtual audio-visual experiences. MLJ brings immersive design to life.</p>
+    </div>
+
+    <div id="help">
+      <h2>Help</h2>
+      <p>Need help? Contact support or visit our FAQ section for quick answers.</p>
+    </div>
+  </div>
+
+  <div class="settings-panel" id="settings-panel">
+    <h3>Settings</h3>
+    <p>Customize your experience here.</p>
+  </div>
+
+  <button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
+
+  <script>
+    const settingsBtn = document.getElementById("settings-btn");
+    const settingsPanel = document.getElementById("settings-panel");
+
+    settingsBtn.addEventListener("click", () => {
+      settingsPanel.style.display = settingsPanel.style.display === "block" ? "none" : "block";
+    });
+
+    function toggleTheme() {
+      document.body.classList.toggle("light-theme");
+    }
+  </script>
+</body>
+</html>

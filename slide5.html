@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Carousel</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      justify-content: center;
+    }
+
+    .carousel {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .carousel-button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    .images {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      overflow: hidden;
+      width: 80vw;
+      justify-content: center;
+    }
+
+    .image-container {
+      position: relative;
+      transition: transform 0.4s ease, width 0.4s ease;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .image-container .overlay-text {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .image-container.small {
+      width: 150px;
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+
+    .image-container.large {
+      width: 400px;
+      transform: scale(1.1);
+      opacity: 1;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <button class="carousel-button" onclick="prevImage()">Prev</button>
+    <div class="images" id="carousel-images">
+      <!-- Images injected by JS -->
+    </div>
+    <button class="carousel-button" onclick="nextImage()">Next</button>
+  </div>
+
+  <script>
+    const imagesData = [
+      { src: "https://picsum.photos/id/1015/600/400", text: "Mountain View" },
+      { src: "https://picsum.photos/id/1025/600/400", text: "Majestic Dog" },
+      { src: "https://picsum.photos/id/1035/600/400", text: "Serene Lake" },
+      { src: "https://picsum.photos/id/1045/600/400", text: "Green Forest" },
+      { src: "https://picsum.photos/id/1055/600/400", text: "City Lights" },
+    ];
+
+    let currentIndex = 0;
+
+    const imageContainer = document.getElementById("carousel-images");
+
+    function renderImages() {
+      imageContainer.innerHTML = "";
+
+      for (let i = 0; i < imagesData.length; i++) {
+        const div = document.createElement("div");
+        div.className = "image-container " + (i === currentIndex ? "large" : "small");
+        div.innerHTML = `
+          <img src="${imagesData[i].src}" alt="Image ${i}" />
+          <div class="overlay-text">${imagesData[i].text}</div>
+        `;
+        imageContainer.appendChild(div);
+      }
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % imagesData.length;
+      renderImages();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + imagesData.length) % imagesData.length;
+      renderImages();
+    }
+
+    // Initial render
+    renderImages();
+  </script>
+</body>
+</html>

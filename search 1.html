@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Bar with Expanding Effect</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="search-container">
+    <input type="text" id="search-bar" placeholder="Search...">
+    <button class="search-icon" id="search-icon">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+#search-bar {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+  width: 0;
+  opacity: 0;
+  transition: width 0.4s ease, opacity 0.4s ease;
+  padding-left: 10px;
+}
+
+.search-icon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+}
+
+.search-container:focus-within #search-bar {
+  width: 200px;
+  opacity: 1;
+}
+
+.search-container:focus-within {
+  border-color: #4CAF50;
+}
+</style>

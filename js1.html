@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUBIRU LATIFU - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+    }
+    header {
+      background: #1f1f1f;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #bbb;
+      font-weight: 300;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero img {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1f1f1f;
+      font-size: 14px;
+      color: #888;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #333;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    .popup button {
+      background: #555;
+      border: none;
+      color: #fff;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .popup button:hover {
+      background: #777;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        margin: 0 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div><strong>MUBIRU LATIFU</strong></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+    <a href="#more">More</a>
+    <a href="#login">Login</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <img src="C:\Users\MUBIRU\Documents\portfolio\images 2\me.jpg" alt="Mubiru Latifu">
+  <h1>Creative and Designer Web Developer</h1>
+  <p>Welcome to my portfolio!</p>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am MUBIRU LATIFU, a passionate web designer and developer creating beautiful and functional websites.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>HTML, CSS, JavaScript</li>
+    <li>UI/UX Design</li>
+    <li>Responsive Web Development</li>
+    <li>WordPress, Webflow</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <p>Coming soon...</p>
+</section>
+
+<section id="blog">
+  <h2>Blog</h2>
+  <p>No posts yet. Stay tuned!</p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Connect with me on <a href="https://linkedin.com" style="color: #4aa3df;">LinkedIn</a>.</p>
+</section>
+
+<section id="more">
+  <h2>More</h2>
+  <p>Explore more about my work and journey soon!</p>
+</section>
+
+<form action="portfolio.html">
+<section id="login">
+  <h2>Login</h2>
+  <div class="main">
+      <div class="login"><h2>LOGIN</h2></h2></div>
+      <section id="login">
+      <input type="text" placeholder="Username" required>
+      <input type="password" placeholder="Password" required>
+          <button type="submit">LOGIN</button>
+        </form>
+        </section>
+  </div>
+</section>
+  <style>
+
+    #login {
+      height: 450px;
+    }
+
+      .login {
+          position: absolute;
+          background-color: azure;
+          border-radius: 5px;
+          left: 40%;
+          padding: 7px;
+      }
+
+      .main h2 {
+          background:none;
+          color:#121212;
+      }
+
+input[type="text"]:hover {
+  width: 250px;
+  filter: drop-shadow(0 3px 6px);
+}
+
+input[type="password"]:hover {
+ width: 250px;
+ filter: drop-shadow(0 3px 6px);
+}
+
+
+.main {
+ position: absolute;
+ left: 23%;
+ top: 1600px;
+ translate: (-50,-50);
+ justify-content: center;
+ border-radius: 10px;
+ width: 400px;
+ height: 300px;
+ box-shadow: 0 6px 11px;
+ }
+
+ #login button {
+ padding: 15px;
+ position: absolute;
+ left: 40%;
+ translate: (-50, -50);
+ border-radius: 15px;
+ background-color: cyan;
+ top: 65%;
+ border: none;
+ filter: drop-shadow(0 5px 10px);
+}
+
+#login button[type="submit"]:hover {
+ padding: 17px;
+ background-color: blue;
+ cursor: pointer;
+}
+
+input[type="text"] {
+ top: 19%;
+ position: absolute;
+ left: 20%;
+ translate: (-50, -50);
+ }
+
+input[type="password"] {
+ top: 40%;
+ position: absolute;
+ left: 20%;
+ translate: (-50, -50);
+ }
+
+ input {
+  width: 250px;
+  border-radius: 10px;
+  height: 45px;
+  border: none;
+  text-align: center;
+  box-shadow: 0 2px 4px;
+  background: none;
+  color: #fff;
+ }
+
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+  </style>
+
+<section id="cookies">
+  <h2>Cookies Policy</h2>
+  <p>This website uses cookies to improve your experience.</p>
+</section>
+
+<div class="popup" id="popup">
+  <p>We use cookies to ensure you get the best experience. 🍪</p>
+  <button onclick="closePopup()">Got it!</button>
+</div>
+
+<footer>
+  &copy; 2025 MUBIRU LATIFU. All rights reserved.
+</footer>
+
+<script>
+  window.onload = function() {
+    setTimeout(function() {
+      document.getElementById('popup').style.display = 'block';
+    }, 3000);
+  }
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
